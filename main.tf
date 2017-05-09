@@ -98,6 +98,14 @@ resource "aws_route53_record" "color_lines" {
     records = ["${aws_s3_bucket.color-lines.website_endpoint}"]
 }
 
+resource "aws_route53_record" "words" {
+    zone_id = "${aws_route53_zone.dremora_com.zone_id}"
+    name = "words"
+    type = "CNAME"
+    ttl = "300"
+    records = ["my-words-1.s3-website-us-east-1.amazonaws.com"]
+}
+
 resource "aws_route53_record" "zazu" {
     zone_id = "${aws_route53_zone.dremora_com.zone_id}"
     name = "zazu"
