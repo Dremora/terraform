@@ -103,7 +103,7 @@ resource "aws_route53_record" "words" {
     name = "words"
     type = "CNAME"
     ttl = "300"
-    records = ["my-words-1.s3-website-us-east-1.amazonaws.com"]
+    records = ["words.dremora.com.s3-website-us-east-1.amazonaws.com"]
 }
 
 resource "aws_route53_record" "zazu" {
